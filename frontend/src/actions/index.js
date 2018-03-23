@@ -19,8 +19,6 @@ export const authError = error => {
 };
 
 export const register = (username, password, confirmPassword, history) => {
-  // console.log(username, password, confirmPassword);
-  // console.log(history);
   return dispatch => {
     if (password !== confirmPassword) {
       dispatch(authError('Passwords do not match'));
@@ -46,7 +44,6 @@ export const login = (username, password, history) => {
     axios
       .post(`${ROOT_URL}/login`, { username, password })
       .then((response) => {
-        console.log(response);
         localStorage.setItem('token', response.data.token);
         dispatch({
           type: USER_AUTHENTICATED
