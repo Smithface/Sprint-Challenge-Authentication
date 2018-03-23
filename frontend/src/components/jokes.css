@@ -1,0 +1,7 @@
+.hidden {
+  visibility: hidden;
+}
+
+.setup:hover {
+  cursor: pointer;
+}

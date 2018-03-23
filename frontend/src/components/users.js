@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUsers } from '../actions';
+import './jokes.css';
 
 class Users extends Component {
   componentDidMount() {
@@ -13,14 +14,18 @@ class Users extends Component {
         {this.props.users.map((joke, i) => {
           return (
             <div key={i}>
-              <li>{joke.setup}</li>
-              <div>{joke.punchline}</div>
+              <li className="setup" onClick={() => togglePunchLine(`${i}`)}>{joke.setup}</li>
+              <div id={`${i}`} className="hidden">{joke.punchline}</div>
             </div>
           );
         })}
       </ul>
     );
   }
+}
+
+const togglePunchLine = (id) => {
+  document.getElementById(id).classList.toggle('hidden');
 }
 
 const mapStateToProps = state => {
