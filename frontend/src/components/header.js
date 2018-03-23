@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './header.css';
 
 class Header extends Component {
   getLinks() {
@@ -23,7 +24,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navBar" >
         <Link to="/">Main Page</Link>
         <ul>{this.getLinks()}</ul>
       </div>

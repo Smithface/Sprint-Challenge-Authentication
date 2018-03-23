@@ -1,0 +1,13 @@
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+}
