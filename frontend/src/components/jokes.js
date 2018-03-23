@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUsers } from '../actions';
+import { getJokes } from '../actions';
 import './jokes.css';
 
-class Users extends Component {
+class Jokes extends Component {
   componentDidMount() {
-    this.props.getUsers();
+    this.props.getJokes();
   }
 
   render() {
     return (
       <ul>
-        {this.props.users.map((joke, i) => {
+        {this.props.jokes.map((joke, i) => {
           return (
             <div key={i}>
               <li className="setup" onClick={() => togglePunchLine(`${i}`)}>{joke.setup}</li>
@@ -30,8 +30,8 @@ const togglePunchLine = (id) => {
 
 const mapStateToProps = state => {
   return {
-    users: state.users
+    jokes: state.jokes
   };
 };
 
-export default connect(mapStateToProps, { getUsers })(Users);
+export default connect(mapStateToProps, { getJokes })(Jokes);
