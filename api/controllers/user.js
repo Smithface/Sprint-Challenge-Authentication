@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const createUser = (req, res) => {
   const { username, password } = req.body;
-  const newUser = new User({ username, password });
+  const newUser = new User({ username: username.toLowerCase(), password });
   newUser
     .save()
     .then(user => {
