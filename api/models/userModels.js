@@ -41,7 +41,7 @@ UserSchema.methods.checkPassword = function(plainTextPW, callBack) {
   // Once you have the user, you'll need to pass the encrypted pw and the plaintext pw to the compare function
   bcrypt.compare(plainTextPW, this.password, (err, isMatch) => {
     if (err) return callBack(err);
-    cb(null, isMatch);
+    callBack(null, isMatch);
   });
 };
 
