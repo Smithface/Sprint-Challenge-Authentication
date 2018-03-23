@@ -71,7 +71,7 @@ export const logout = () => {
 export const getUsers = () => {
   return dispatch => {
     axios
-      .get(`${ROOT_URL}/users`, { headers: { "Authorization": localStorage.getItem('token') }})
+      .get(`${ROOT_URL}/jokes`, { headers: { "Authorization": localStorage.getItem('token') }})
       .then(response => {
         dispatch({
           type: GET_USERS,

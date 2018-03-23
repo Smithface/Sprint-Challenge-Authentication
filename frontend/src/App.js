@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './components/header';
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,6 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to THE JOKES</h1>
         </header>
+        <Header />
       </div>
     );
   }
