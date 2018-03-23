@@ -4,7 +4,7 @@ const User = require('../models/userModels');
 
 const login = (req, res) => {
   const { username, password } = req.body;
-  User.findOne({ username }, (err, user) => {
+  User.findOne({ username: username.toLowerCase() }, (err, user) => {
     if (err) {
       res.status(403).json({ error: 'Invalid Username/Password' });
       return;
